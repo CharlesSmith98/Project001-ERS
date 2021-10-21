@@ -25,9 +25,9 @@ async function login(e) {
 		let res = await req.json();
 		console.log(res);
 		if(res.roleId == 1) {
-			location.href = '../html/empHome.html';
+			location.href = '../html/emp/home.html';
 		}else if(res.roleId == 2) {
-			location.href = '../html/manHome.html';
+			location.href = '../html/man/home.html';
 		}
 	}catch(e) {
 		alert("Username or Password is incorrect");

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.revature.controllers.LoginController;
+import com.revature.controllers.LogoutController;
 
 public class Dispatcher {
 
@@ -15,6 +16,9 @@ public class Dispatcher {
 		switch(req.getRequestURI()) {
 		case "/Project001/api/login":
 			LoginController.login(req, res);
+			break;
+		case "/Project001/api/logout":
+			LogoutController.logout(req, res);
 			break;
 		}
 	}
