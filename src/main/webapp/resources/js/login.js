@@ -23,7 +23,12 @@ async function login(e) {
 		});
 		console.log(user);
 		let res = await req.json();
-		location.href = '../html/home.html';
+		console.log(res);
+		if(res.roleId == 1) {
+			location.href = '../html/empHome.html';
+		}else if(res.roleId == 2) {
+			location.href = '../html/manHome.html';
+		}
 	}catch(e) {
 		alert("Username or Password is incorrect");
 	}

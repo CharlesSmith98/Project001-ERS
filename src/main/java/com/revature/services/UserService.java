@@ -19,4 +19,15 @@ public class UserService {
 		return null;
 	}
 	
+	public User viewAccountInfo(User user) {
+		User u = uDao.getUserById(user.getId());
+		return u;
+	}
+	
+	public User updateAccountInfo(User user) {
+		if(uDao.updateUser(user)) {
+			return user;
+		}
+		return null;
+	}
 }

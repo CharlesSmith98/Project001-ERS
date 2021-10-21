@@ -46,6 +46,7 @@ public class LoginController {
 			req.getSession().setAttribute("id", u.getId());
 			res.setStatus(200);
 			res.getWriter().write(new ObjectMapper().writeValueAsString(u));
+			System.out.println(req.getRequestURI());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
