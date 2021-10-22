@@ -22,14 +22,15 @@ public class ReimbDaoDB implements ReimbDao {
 			Connection con = conUtil.getConnection();
 			
 			String sql = "insert into ers_reimbursement (reimb_amount, " 
-					+ "reimb_author, reimb_type_id) " 
-					+ "values (?,?,?)";
+					+ "reimb_author, reimb_type_id, reimb_description) " 
+					+ "values (?,?,?,?)";
 			
 			PreparedStatement ps = con.prepareStatement(sql);
 			
 			ps.setDouble(1, reimb.getAmount());
 			ps.setInt(2, reimb.getAuthorId());
 			ps.setInt(3, reimb.getTypeId());
+			ps.setString(4, reimb.getDescription());
 			
 			ps.execute();
 			

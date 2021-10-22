@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.revature.controllers.LoginController;
 import com.revature.controllers.LogoutController;
+import com.revature.controllers.SubmitReimbController;
 
 public class Dispatcher {
 
@@ -19,6 +20,9 @@ public class Dispatcher {
 			break;
 		case "/Project001/api/logout":
 			LogoutController.logout(req, res);
+			break;
+		case "/Project001/api/request":
+			SubmitReimbController.submitRequest(req, res);
 			break;
 		}
 	}

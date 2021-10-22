@@ -10,7 +10,8 @@ function logout(e) {
 	
 	try{
 		let req = fetch('http://localhost:8080/Project001/api/logout');
-		location.href='../../html/login.html';
+		window.location.replace("../../html/login.html");
+		//location.href='../../html/login.html';
 	} catch(e) {
 		console.log('Error Logging Out');
 	}
