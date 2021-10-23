@@ -19,8 +19,8 @@ public class UserService {
 		return null;
 	}
 	
-	public User viewAccountInfo(User user) {
-		User u = uDao.getUserById(user.getId());
+	public User viewAccountInfo(int userId) {
+		User u = uDao.getUserById(userId);
 		return u;
 	}
 	
