@@ -11,6 +11,7 @@ public interface UserDao {
 	
 	// (R) Read
 	List<User> getAllUsers();
+	List<User> getAllEmployees();
 	User getUserById(int userId);
 	User getUserByEmail(String userEmail);
 	User getUserByUsername(String username);

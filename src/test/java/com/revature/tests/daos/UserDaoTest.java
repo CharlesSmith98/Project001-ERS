@@ -51,6 +51,16 @@ public class UserDaoTest {
 	}
 	
 	@Test
+	public void getAllEmployeesTest() {
+		List<User> employees = uDao.getAllEmployees();
+		System.out.println("Results of getAllEmployees:");
+		for(User u : employees) {
+			System.out.println(u);
+		}
+		assertFalse(employees.size() == 1);
+	}
+	
+	@Test
 	public void getUserByIdTest() {
 		User jeremy = new User(1, "JBelpois", "einstein", "Jeremy", "Belpois", "jbelpois@mail.com", 2);
 		User ret = uDao.getUserById(1);

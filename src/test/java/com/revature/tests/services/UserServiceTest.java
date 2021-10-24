@@ -1,6 +1,11 @@
 package com.revature.tests.services;
 
 import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -54,10 +59,25 @@ public class UserServiceTest {
 		
 		when(uDao.getUserById(anyInt())).thenReturn(ulrich);
 		
-		User ret = uServ.viewAccountInfo(ulrich);
+		User ret = uServ.viewAccountInfo(ulrich.getId());
 		
 		System.out.println(ret);
 		assertTrue(ulrich.getPassword().equals(ret.getPassword()));
+	}
+	
+	@Test
+	public void viewAllEmployeesTest() {
+		List<User> employees = new ArrayList<>();
+		employees.add(new User(2, "UStern", "katana", "Ulrich", "Stern", "ustern@mail.com", 1));
+		
+		when(uDao.getAllEmployees()).thenReturn(employees);
+		System.out.println("Results of viewAllEmployees");
+		
+		List<User> expectedUsers = uServ.viewAllEmployees();
+		for (User u : expectedUsers) {
+			System.out.println(u);
+		}
+		assertFalse(expectedUsers.size() == 0);
 	}
 	
 	@Test

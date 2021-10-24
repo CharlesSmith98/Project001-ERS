@@ -30,4 +30,23 @@ public class ReimbService {
 		return reimbursements;
 	}
 	
+	public boolean resolveReimbursement(Reimbursement reimb) {
+		return rDao.updateReimbursement(reimb);
+	}
+	
+	public List<Reimbursement> viewAllPendingReimbursements() {
+		List<Reimbursement> reimbursements = rDao.getPendingReimbursements();
+		return reimbursements;
+	}
+	
+	public List<Reimbursement> viewAllResolvedReimbursements() {
+		List<Reimbursement> reimbursements = rDao.getResolvedReimbursements();
+		return reimbursements;
+	}
+	
+	public List<Reimbursement> viewAllReimbursementsBy(User u) {
+		List<Reimbursement> reimbursements = rDao.getAllReimbursementsBy(u);
+		return reimbursements;
+	}
+	
 }

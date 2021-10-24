@@ -72,6 +72,39 @@ public class UserDaoDB implements UserDao {
 		}
 		return null;
 	}
+	
+	@Override
+	public List<User> getAllEmployees() {
+		List<User> employees = new ArrayList<>();
+		
+		try {
+			Connection con = conUtil.getConnection();
+			
+			String sql = "select * from ers_users where user_role_id = 1";
+			
+			Statement s = con.createStatement();
+			ResultSet rs = s.executeQuery(sql);
+			
+			while(rs.next()) {
+				int userId = rs.getInt(1);
+				String username = rs.getString(2);
+				String password = rs.getString(3);
+				String firstName = rs.getString(4);
+				String lastName = rs.getString(5);
+				String email = rs.getString(6);
+				int userRoleId = rs.getInt(7);
+				
+				User u = new User(userId, username, password, firstName, lastName, email, userRoleId);
+				employees.add(u);
+			}
+			
+			return employees;
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@Override
 	public User getUserById(int userId) {
