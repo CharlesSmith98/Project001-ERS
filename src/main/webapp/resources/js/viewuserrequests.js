@@ -1,4 +1,4 @@
-let form = document.getElementById('form');
+let form = document.getElementById('user-form');
 
 form.addEventListener('submit', viewReq);
 

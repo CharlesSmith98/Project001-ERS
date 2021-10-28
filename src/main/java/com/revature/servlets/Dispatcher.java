@@ -10,6 +10,7 @@ import com.revature.controllers.FindAuthorController;
 import com.revature.controllers.FindResolverController;
 import com.revature.controllers.LoginController;
 import com.revature.controllers.LogoutController;
+import com.revature.controllers.RegistrationController;
 import com.revature.controllers.ResolveReimbursementController;
 import com.revature.controllers.SubmitReimbController;
 import com.revature.controllers.UpdateAccountController;
@@ -26,6 +27,9 @@ public class Dispatcher {
 	public static void process(HttpServletRequest req, HttpServletResponse res) throws IOException, JsonProcessingException {
 		System.out.println("In the Servlet Dispatcher with URI: " + req.getRequestURI());
 		switch(req.getRequestURI()) {
+		case "/Project001/api/register":
+			RegistrationController.signUp(req, res);
+			break;
 		case "/Project001/api/login":
 			LoginController.login(req, res);
 			break;

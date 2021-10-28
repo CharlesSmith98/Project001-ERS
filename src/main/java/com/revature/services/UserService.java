@@ -13,6 +13,13 @@ public class UserService {
 		this.uDao = dao;
 	}
 	
+	public User registerUser(User user) {
+		if(uDao.createUser(user)) {
+			return user;
+		}
+		return null;
+	}
+	
 	public User signIn(String username, String password) {
 		User u = uDao.getUserByUsername(username);
 		if(u.getPassword().equals(password)) {

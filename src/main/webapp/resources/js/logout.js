@@ -3,17 +3,15 @@ let signOff = document.getElementById("logout");
 
 signOff.addEventListener('click', logout);
 
-function logout(e) {
-	e.preventDefault();
+async function logout() {
 	console.log('click');
 	//let text = 'User logged out';
 	
-	try{
-		let req = fetch('http://localhost:8080/Project001/api/logout');
-		browser.history.deleteAll();
-		window.location.replace("../../html/login.html");
-		//location.href='../../html/login.html';
-	} catch(e) {
-		console.log('Error Logging Out');
-	}
+		let req = await fetch('http://localhost:8080/Project001/api/logout');
+		let res = req.status;
+		if(res == 200) {
+			console.log('Should Redirect')
+			window.location.replace('http://localhost:8080/Project001/resources/html/login.html');
+		} 
+		
 }
