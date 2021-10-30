@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>ERS - My Profile</title>
+	<meta charset="ISO-8859-1">
+	<title>ERS - My Profile</title>
+	<link rel="stylesheet" href="../../css/master.css">
 </head>
 <body>
-	<nav>
-		<a href="profile.html">Profile</a>
-		<a href="myrequests.html">View Reimbursements</a>
-		<a href="request.html">Submit Reimbursement Request</a>
-		<button id="logout">Logout</button>
-	</nav>
-	<div id="main">
-		<div id="account">
-			
+	<div id="content">
+		<nav>
+			<a href="home.html">Home</a>
+			<a href="profile.html">Profile</a>
+			<a href="myrequests.html">View Reimbursements</a>
+			<a href="request.html">Submit Reimbursement Request</a>
+			<span id="logout">Logout</span>
+		</nav>
+		<div id="main">
+			<div id="account">
+				
+			</div>
+			<input type="checkbox" id="update" name="update" value="update">
+			<label for="update">I would like to update my account</label>
 		</div>
-		<input type="checkbox" id="update" name="update" value="update">
-		<label for="update">I would like to update my account</label>
-	</div>
-	<div id="updateInfo">
-			
+		<div id="updateInfo">
+				
+		</div>
 	</div>
 	<script src="../../js/viewAccount.js"></script>
 	<script src="../../js/updateAccount.js"></script>

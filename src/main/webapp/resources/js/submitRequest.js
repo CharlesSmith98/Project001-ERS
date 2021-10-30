@@ -3,8 +3,6 @@ let form = document.getElementById("requestApp");
 form.addEventListener('submit', submitRequest);
 
 async function submitRequest(e) {
-	e.preventDefault();
-	
 	let amount = document.getElementById("amount").value;
 	let type = document.getElementById("type").value;
 	let description = document.getElementById("desc").value;

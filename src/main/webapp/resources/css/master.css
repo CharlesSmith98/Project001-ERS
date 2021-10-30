@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image: linear-gradient(to right, dodgerblue, mediumblue, navy, mediumblue, dodgerblue);
+}
+
+nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#content {
+	background-color: hsl(0, 0%, 100%);
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	min-height: 25em;
+	border: 2px solid black;
+}
+
+nav a:link, nav a:visited {
+	display: inline-block;
+	padding: 5px 5px;
+	background-color: hsl(240, 100%, 27%);
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+nav a:hover, nav a:active {
+	display: inline-block;
+	padding: 5px 5px;
+	background-color: hsl(240, 100%, 67%);
+	color: white;
+	text-align:center;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+table {
+	margin-top: 3px;
+	border: 2px solid black;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+th, td {
+	border-bottom: 1px solid hsl(240, 100%, 40%);
+	border-right: 1px solid hsl(240, 100%, 40%);
+	text-align: left;
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: hsl(240, 30%, 80%);
+}
+
+#display tr:hover {
+	background-color: hsl(210, 100%, 70%);
+	/*color: ;*/
+}
+
+#logout {
+	display: inline-block;
+	padding: 5px 5px;
+	background-color: hsl(240, 100%, 27%);
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+#logout:hover {
+	display: inline-block;
+	padding: 5px 5px;
+	background-color: hsl(240, 100%, 67%);
+	color: white;
+	text-align:center;
+	text-decoration: none;
+	border-radius: 10px;
+}

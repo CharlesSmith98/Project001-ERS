@@ -3,6 +3,10 @@ let form = document.getElementById('user-form');
 form.addEventListener('submit', viewReq);
 
 let users = new Array();
+let money = new Intl.NumberFormat(`en-US`, {
+	currency: `USD`,
+	style: 'currency'
+});
 
 (async function(){
 	let dropDown = document.getElementById('username');
@@ -101,8 +105,9 @@ async function viewReq(event) {
 			reimbs[i].typeId = 'Other';
 		}
 		
+		let dollars = money.format(reimbs[i].amount);
 		let row = document.createElement('tr');
-		row.innerHTML = `<td>${reimbs[i].amount}</td><td>${reimbs[i].typeId}</td><td>${reimbs[i].description}</td><td>${reimbs[i].timeSubmitted}</td>
+		row.innerHTML = `<td>${dollars}</td><td>${reimbs[i].typeId}</td><td>${reimbs[i].description}</td><td>${reimbs[i].timeSubmitted}</td>
 						<td>${reimbs[i].statusId}</td><td>${reimbs[i].resolverId}</td><td>${reimbs[i].timeResolved}</td>
 						<td>${reimbs[i].receipt}</td>`;
 		table.appendChild(row);

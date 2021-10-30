@@ -2,6 +2,11 @@ let form = document.getElementById('form');
 
 form.addEventListener('submit', viewReq);
 
+let moneyFormat = new Intl.NumberFormat(`en-US`, {
+	currency: `USD`,
+	style: 'currency'
+});
+
 async function viewReq(e) {
 	e.preventDefault();
 	
@@ -93,8 +98,10 @@ async function viewReq(e) {
 			res[i].typeId = 'Other';
 		}
 		
+		let dollars = moneyFormat.format(res[i].amount);
+		
 		let row = document.createElement('tr');
-		row.innerHTML = `<td>${res[i].amount}</td><td>${res[i].typeId}</td><td>${res[i].authorId}</td><td>${res[i].description}</td>
+		row.innerHTML = `<td>${dollars}</td><td>${res[i].typeId}</td><td>${res[i].authorId}</td><td>${res[i].description}</td>
 						<td>${res[i].timeSubmitted}</td><td>${res[i].statusId}</td><td>${res[i].resolverId}</td><td>${res[i].timeResolved}</td>
 						<td>${res[i].receipt}</td>`;
 		table.appendChild(row);

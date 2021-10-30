@@ -74,14 +74,20 @@ async function getReimbs(e) {
 		reimbs.push(obj);
 	}
 	
-	//console.log(reimbs);
+	
+	let moneyFormat = new Intl.NumberFormat(`en-US`, {
+		currency: `USD`,
+		style: 'currency'		
+	});
 	
 	let table = document.createElement('table');
 	table.innerHTML = '<tr><th>Type</th><th>Amount</th><th>Status</th><th>Description</th><th>Time Submitted</th><th>Time Resolved</th></tr>';
 	container.appendChild(table);
 	for (let i = 0; i < reimbs.length; i++) {
 		let row = document.createElement('tr');
-		row.innerHTML = `<td>${reimbs[i].type}</td><td>${reimbs[i].amount}</td><td>${reimbs[i].status}</td><td>${reimbs[i].description}</td><td>${reimbs[i].timeSubmitted}</td><td>${reimbs[i].timeResolved}</td>`;
+		let dollarAmount = moneyFormat.format(reimbs[i].amount);
+		console.log(reimbs[i]);
+		row.innerHTML = `<td>${reimbs[i].type}</td><td>${dollarAmount}</td><td>${reimbs[i].status}</td><td>${reimbs[i].description}</td><td>${reimbs[i].timeSubmitted}</td><td>${reimbs[i].timeResolved}</td>`;
 		table.appendChild(row);
 	}
 	

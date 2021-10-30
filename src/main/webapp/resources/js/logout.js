@@ -3,7 +3,8 @@ let signOff = document.getElementById("logout");
 
 signOff.addEventListener('click', logout);
 
-async function logout() {
+async function logout(e) {
+	e.preventDefault();
 	console.log('click');
 	//let text = 'User logged out';
 	
