@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.ReimbDao;
 import com.revature.dao.ReimbDaoDB;
+import com.revature.logging.Logging;
 import com.revature.models.Reimbursement;
 import com.revature.services.ReimbService;
 
@@ -45,7 +46,7 @@ public class SubmitReimbController {
 		Reimbursement reimb = new Reimbursement(amount, authorId, typeId);
 		reimb.setDescription(description);
 		rServ.submitReimbursement(reimb);
-		
+		Logging.logger.info("Reimbursement Submitted");
 		res.setStatus(200);
 		res.getWriter().write(data);
 	}

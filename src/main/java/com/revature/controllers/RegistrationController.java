@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoDB;
+import com.revature.logging.Logging;
 import com.revature.models.User;
 import com.revature.services.UserService;
 
@@ -49,6 +50,7 @@ public class RegistrationController {
 		if(user != null) {
 			res.setStatus(200);
 			res.getWriter().write(new ObjectMapper().writeValueAsString(user));
+			Logging.logger.info(username + " was registered");
 		} else {
 			//String[] result = new String[2];
 			//result[0] = "message";

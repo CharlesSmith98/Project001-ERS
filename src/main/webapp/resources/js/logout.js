@@ -11,7 +11,7 @@ async function logout(e) {
 		let req = await fetch('http://localhost:8080/Project001/api/logout');
 		let res = req.status;
 		if(res == 200) {
-			console.log('Should Redirect')
+			console.log('Should Redirect');
 			window.location.replace('http://localhost:8080/Project001/resources/html/login.html');
 		} 
 		

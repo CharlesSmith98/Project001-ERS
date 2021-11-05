@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoDB;
+import com.revature.logging.Logging;
 import com.revature.models.User;
 import com.revature.services.UserService;
 
@@ -43,6 +44,7 @@ public class UpdateAccountController {
 		current.setPassword(password);
 		uServ.updateAccountInfo(current);
 		
+		Logging.logger.info(current.getUsername() + " changed their password");
 		res.setStatus(200);
 		res.getWriter().write(new ObjectMapper().writeValueAsString(current));
 	}

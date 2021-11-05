@@ -1,0 +1,55 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-17ce9083722-e0b260c9ee3de35": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "flightdb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "javaproject0.ccu2h83imwlw.us-east-2.rds.amazonaws.com",
+				"port": "5432",
+				"database": "flightdb",
+				"url": "jdbc:postgresql://javaproject0.ccu2h83imwlw.us-east-2.rds.amazonaws.com:5432/flightdb",
+				"home": "postgresql_client",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false",
+					"@dbeaver-show-unavailable-db@": "false",
+					"show-database-statistics": "false",
+					"@dbeaver-read-all-data-types-db@": "false",
+					"@dbeaver-use-prepared-statements-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"virtual-models": {
+		"postgres-jdbc-17ce9083722-e0b260c9ee3de35": {
+			"flightdb": {
+				"public": {
+					"@properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"empty\" time=\"202111041639\"><entities><data-source id=\"postgres-jdbc-17ce9083722-e0b260c9ee3de35\"><entity id=\"1\" name=\"flight\" fq-name=\"public.flight\" order=\"0\" x=\"414\" y=\"171\"><path name=\"public\"/><path name=\"flightdb\"/></entity><entity id=\"2\" name=\"seats\" fq-name=\"public.seats\" order=\"1\" border-width=\"3\" x=\"274\" y=\"39\"><path name=\"public\"/><path name=\"flightdb\"/></entity><entity id=\"3\" name=\"ticket\" fq-name=\"public.ticket\" order=\"2\" x=\"190\" y=\"205\"><path name=\"public\"/><path name=\"flightdb\"/></entity><entity id=\"4\" name=\"users\" fq-name=\"public.users\" order=\"3\" x=\"22\" y=\"93\"><path name=\"public\"/><path name=\"flightdb\"/></entity></data-source></entities><relations><relation name=\"fk7h5tevvowu6ailxl1cpr4seto\" fq-name=\"public.seats.fk7h5tevvowu6ailxl1cpr4seto\" type=\"fk\" pk-ref=\"1\" fk-ref=\"2\"/><relation name=\"fk9yd3wjgxgjgugkji0lm1ks2wi\" fq-name=\"public.ticket.fk9yd3wjgxgjgugkji0lm1ks2wi\" type=\"fk\" pk-ref=\"1\" fk-ref=\"3\"/><relation name=\"fk9k2k7dg03f83x7181m8gap19s\" fq-name=\"public.ticket.fk9k2k7dg03f83x7181m8gap19s\" type=\"fk\" pk-ref=\"2\" fk-ref=\"3\"/><relation name=\"fkmvugyjf7b45u0juyue7k3pct0\" fq-name=\"public.ticket.fkmvugyjf7b45u0juyue7k3pct0\" type=\"fk\" pk-ref=\"4\" fk-ref=\"3\"/></relations></diagram>"
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

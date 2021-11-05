@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.ReimbDao;
 import com.revature.dao.ReimbDaoDB;
+import com.revature.logging.Logging;
 import com.revature.models.Reimbursement;
 import com.revature.services.ReimbService;
 
@@ -45,6 +46,7 @@ public class ResolveReimbursementController {
 		reimb.setTimeResolved(new Timestamp(System.currentTimeMillis()));
 		reimb.setStatusId(statusId);
 		
+		Logging.logger.info("Reimbursement " + reimb.getId() + " was resolved");
 		rServ.resolveReimbursement(reimb);
 		res.setStatus(200);
 		res.getWriter().write(new ObjectMapper().writeValueAsString(reimb));

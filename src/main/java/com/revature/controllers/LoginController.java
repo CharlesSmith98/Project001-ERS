@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoDB;
+import com.revature.logging.Logging;
 import com.revature.models.User;
 import com.revature.services.UserService;
 
@@ -47,6 +48,7 @@ public class LoginController {
 			res.setStatus(200);
 			res.getWriter().write(new ObjectMapper().writeValueAsString(u));
 			System.out.println(req.getRequestURI());
+			Logging.logger.info(username + " logged in");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
